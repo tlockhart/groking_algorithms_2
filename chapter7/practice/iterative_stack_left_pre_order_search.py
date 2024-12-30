@@ -4,7 +4,7 @@ def is_seller(name):
         return True
     
 # SLICER:
-def search(name):
+def pre_order_search(name):
     # S initialize search_stack
     search_stack = [name]
     
@@ -63,6 +63,6 @@ tree = {
 }
 
 # Call Search starting from "you"
-search('you')
+pre_order_search('you')
 
 # print(is_seller("you"))
