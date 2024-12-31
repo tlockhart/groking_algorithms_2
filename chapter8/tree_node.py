@@ -23,18 +23,22 @@ class TreeNode:
     def insert(self, value):
     # Value less than current node value, go to the left.child
         if value < self.value:
-            # Recursive Case: if there is not left child add a the value to the left child
+            # Recursive Case: if there is a left_child
+            # call insert with value, to check new value
             if self.left_child:
                 self.left_child.insert(value)
-            # Base Case: Insert value to left_child of current node
+            # Recursive Case: If no left_child create a  
+            # new node and add it to the left_child ptr
             else:
                 self.left_child = TreeNode(value)
         # Value greater than current node value, go to the right.child 
         elif value > self.value:
-            # Base Case: if there is not right child add a the value to the right child
+            # Recursive Case: if right_child exists call
+            # insert with the current value
             if self.right_child:
                 self.right_child.insert(value)
-            # Recursive Case: Insert value to right_child  of current node
+            # Recursive Case: If right_child doesn't exist,
+            # create a new node and save to right_child  ptr
             else:
                 self.right_child = TreeNode(value)
                 
